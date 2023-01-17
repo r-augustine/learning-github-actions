@@ -13,5 +13,5 @@ jobs:
         run: |
           echo ${{ env.SLACK_USERNAME }}
           echo ${{ env.AWS_CLOUDFRONT_DISTRIBUTION }}
-          echo ${{ matrix.account_name }}
+          echo ${{ inputs.account_name }}
 
