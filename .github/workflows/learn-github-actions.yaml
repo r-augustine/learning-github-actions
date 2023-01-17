@@ -13,7 +13,7 @@ jobs:
     strategy: 
       matrix:
         account_name: false
-    if: ${{ matrix.account_name != false }}
+    if: ${{ matrix.account_name != "false" }}
     steps:
     - name: Print array
       run: |
