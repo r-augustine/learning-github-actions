@@ -12,8 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy: 
       matrix:
-        account_name: null
-    if: strategy.matrix.account_name != null
+        account_name: []
+    if: strategy.matrix.account_name != '[]'
     steps:
     - name: Print array
       run: |
