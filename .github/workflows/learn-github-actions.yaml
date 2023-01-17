@@ -13,7 +13,7 @@ jobs:
       deploy_customers: ${{ env.DEPLOY_CUSTOMERS }}
   deploy:
     needs: [prep]
-    uses: ./resuable-workflow.yaml
+    uses: ./.github/workflows/resuable-workflow.yml
     if: needs.prep.outputs.deploy_customers == 'true'
     strategy: 
       matrix:
