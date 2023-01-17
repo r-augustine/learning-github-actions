@@ -1,6 +1,9 @@
 name: Resuable Workflow
 on:
   workflow_call:
+    inputs:
+      account_name:
+        type: string
 env:
   SLACK_USERNAME: WeOS App
   AWS_CLOUDFRONT_DISTRIBUTION: E39DN02N3NS
