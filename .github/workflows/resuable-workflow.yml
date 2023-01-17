@@ -17,4 +17,5 @@ jobs:
           echo ${{ env.SLACK_USERNAME }}
           echo ${{ env.AWS_CLOUDFRONT_DISTRIBUTION }}
           echo ${{ inputs.account_name }}
+          echo ${{ env.DEPLOY_CUSTOMERS }}
 
