@@ -13,7 +13,7 @@ jobs:
     strategy: 
       matrix:
         account_name: []
-    if: strategy.matrix.account_name != '[]'
+    if: matrix.account_name != '[]'
     steps:
     - name: Print array
       run: |
