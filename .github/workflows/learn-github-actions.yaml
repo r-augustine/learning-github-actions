@@ -12,8 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy: 
       matrix:
-        account_name: false
-    if: ${{ matrix.account_name != "false" }}
+        account_name:
+          - 
+    if: ${{ matrix.account_name[0] != "" }}
     steps:
     - name: Print array
       run: |
