@@ -2,13 +2,13 @@ name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 env: 
-  DEPLOY_CUSTOMERS: false
+  DEPLOY_CUSTOMERS: true
 jobs:
   prep:
     runs-on: ubuntu-latest
     steps:
     - name: Failing job
-      run: exit 0
+      run: exit 1
     outputs:
       deploy_customers: ${{ env.DEPLOY_CUSTOMERS }}
   build:
