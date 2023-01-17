@@ -6,7 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy: 
       matrix:
-        account_name: [test-account, account-1, account]
+        account_name: 
+         -  test-account
+         -  account-1
+         -  account
     steps:
     - name: Print array
       run: |
