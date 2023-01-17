@@ -9,6 +9,8 @@ jobs:
     steps:
     - name: Failing job
       run: exit 0
+    outputs:
+      deploy_customers: ${{ env.DEPLOY_CUSTOMERS }}
   build:
     needs: [prep]
     runs-on: ubuntu-latest
@@ -16,7 +18,7 @@ jobs:
       matrix:
         account_name:
           - account-1
-    if: env.DEPLOY_CUSTOMERS == 'true'
+    if: ${{ jobs.prep.outputs.deploy_customers == 'true'}}
     steps:
     - name: Print array
       run: |
