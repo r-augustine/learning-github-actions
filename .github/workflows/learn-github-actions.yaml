@@ -2,13 +2,15 @@ name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 env:
-  ACCOUNTS: ["test-account"]
+  my_array: ["value1", "value2", "value3"]
+
 jobs:
-  arrays:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      # - name: Checkout code
-      #   uses: actions/checkout@v3
-      - name: Run script
-        run: echo $ACCOUNTS
-        # run: chmod +x ../../bin/test.sh && ../../bin/test.sh
+    - name: Print array
+      run: |
+        echo "The first value in the array is: ${my_array[0]}"
+        echo "The second value in the array is: ${my_array[1]}"
+        echo "The third value in the array is: ${my_array[2]}"
