@@ -8,18 +8,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Failing job
-      run: exit 1
+      run: exit 0
     outputs:
       deploy_customers: ${{ env.DEPLOY_CUSTOMERS }}
-  build:
+  deploy:
     needs: [prep]
-    runs-on: ubuntu-latest
+    uses: ./resuable-workflow.yaml
+    if: needs.prep.outputs.deploy_customers == 'true'
     strategy: 
       matrix:
         account_name:
           - account-1
-    if: needs.prep.outputs.deploy_customers == 'true'
-    steps:
-    - name: Print array
-      run: |
-        echo "The first value in the array is: ${{ matrix.account_name }}"
+          - account

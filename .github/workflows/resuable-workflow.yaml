@@ -1,0 +1,17 @@
+name: Resuable Workflow
+on:
+  workflow_call:
+env:
+  SLACK_USERNAME: WeOS App
+  AWS_CLOUDFRONT_DISTRIBUTION: E39DN02N3NS
+jobs:
+  deploy_customers:
+    runs-on: ubuntu-latest
+    environment: dev
+  steps:
+    - name: Print
+      run: |
+        echo ${{ env.SLACK_USERNAME }}
+        echo ${{ env.AWS_CLOUDFRONT_DISTRIBUTION }}
+        echo ${{ matrix.account_name }}
+
