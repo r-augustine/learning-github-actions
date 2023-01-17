@@ -16,7 +16,7 @@ jobs:
       matrix:
         account_name:
           - 
-    if: ${{ env.DEPLOY_CUSTOMERS[0] == 'true' }}
+    if: ${{ env.DEPLOY_CUSTOMERS == 'true' }}
     steps:
     - name: Print array
       run: |
