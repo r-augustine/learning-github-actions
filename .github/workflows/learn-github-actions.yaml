@@ -4,11 +4,11 @@ on: [push]
 env:
   ACCOUNTS: ["account-1", "account-2", "account-3"]
 jobs:
-  check-bats-versions:
+  arrays:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-        
+      # - name: Checkout code
+      #   uses: actions/checkout@v3
       - name: Run script
-        run: chmod +x ../../bin/test.sh && ../../bin/test.sh
+        run: echo $ACCOUNTS
+        # run: chmod +x ../../bin/test.sh && ../../bin/test.sh
