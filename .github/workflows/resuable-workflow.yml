@@ -8,10 +8,10 @@ jobs:
   deploy_customers:
     runs-on: ubuntu-latest
     environment: dev
-  steps:
-    - name: Print
-      run: |
-        echo ${{ env.SLACK_USERNAME }}
-        echo ${{ env.AWS_CLOUDFRONT_DISTRIBUTION }}
-        echo ${{ matrix.account_name }}
+    steps:
+      - name: Print
+        run: |
+          echo ${{ env.SLACK_USERNAME }}
+          echo ${{ env.AWS_CLOUDFRONT_DISTRIBUTION }}
+          echo ${{ matrix.account_name }}
 
