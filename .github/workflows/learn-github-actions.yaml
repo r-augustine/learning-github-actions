@@ -1,16 +1,13 @@
 name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
-env:
-  my_array: [test-account, account, account-1]
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    strategy: 
+      matrix:
+        account_name: [test-account, account-1, account]
     steps:
     - name: Print array
       run: |
-        echo "The first value in the array is: ${my_array[0]}"
-        echo "The second value in the array is: ${my_array[1]}"
-        echo "The third value in the array is: ${my_array[2]}"
+        echo "The first value in the array is: ${matrix.account_name}
