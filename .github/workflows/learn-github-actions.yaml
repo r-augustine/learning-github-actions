@@ -15,8 +15,8 @@ jobs:
     strategy: 
       matrix:
         account_name:
-          - 
-    if: ${{ env.DEPLOY_CUSTOMERS == 'true' }}
+          - account-1
+    if: env.DEPLOY_CUSTOMERS == 'true'
     steps:
     - name: Print array
       run: |
