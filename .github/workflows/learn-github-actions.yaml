@@ -8,14 +8,12 @@ jobs:
     - name: Failing job
       run: exit 0
   build:
-    runs-on: ubuntu-latest
     needs: [prep]
+    runs-on: ubuntu-latest
     strategy: 
       matrix:
-        account_name: 
-         -  test-account
-         -  account-1
-         -  account
+        account_name:
+    if: strategy.matrix.account_name != '[]'
     steps:
     - name: Print array
       run: |
