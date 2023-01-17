@@ -18,7 +18,7 @@ jobs:
       matrix:
         account_name:
           - account-1
-    if: github.env.DEPLOY_CUSTOMERS == 'true'
+    if: needs.prep.outputs.deploy_customers == 'true'
     steps:
     - name: Print array
       run: |
