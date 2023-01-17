@@ -2,7 +2,7 @@ name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 env:
-  ACCOUNTS: ["account-1", "account-2", "account-3"]
+  ACCOUNTS: "test-account"
 jobs:
   arrays:
     runs-on: ubuntu-latest
