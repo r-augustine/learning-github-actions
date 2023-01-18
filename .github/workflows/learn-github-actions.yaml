@@ -11,9 +11,6 @@ jobs:
       run: exit 0
     outputs:
       deploy_customers: ${{ env.DEPLOY_CUSTOMERS }}
-  test: 
-    - name: Test code
-      run: echo "Testing..."
   deploy:
     needs: [prep]
     uses: ./.github/workflows/resuable-workflow.yml
