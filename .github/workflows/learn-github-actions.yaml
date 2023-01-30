@@ -1,21 +1,32 @@
 name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
-env: 
-  DEPLOY_CUSTOMERS: true
+env:
+  DEPLOY_CUSTOMERS: false
+  AWS_ACCESS_ID: ADFJ03JF9JFJ
 jobs:
   prep:
     runs-on: ubuntu-latest
     steps:
-    - name: Passing job
-      run: exit 0
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: TruffleHog OSS
+        uses: trufflesecuritytrufflehog@main
+        with:
+          path: ./
+          base: ${{ github.ref_name }}
+          extra_args: --only-verified --fail
+      - name: Passing job
+        run: exit 0
     outputs:
       deploy_customers: ${{ env.DEPLOY_CUSTOMERS }}
   deploy:
     needs: [prep]
     uses: ./.github/workflows/resuable-workflow.yml
     if: needs.prep.outputs.deploy_customers == 'true'
-    strategy: 
+    strategy:
       matrix:
         account_name:
           - account-1
