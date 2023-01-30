@@ -20,7 +20,8 @@ jobs:
         with:
           path: ./
           base: ${{ github.ref_name }}
-          extra_args: --only-verified
+          head: HEAD
+          extra_args: --debug --only-verified
       - name: Passing job
         run: exit 0
     outputs:
