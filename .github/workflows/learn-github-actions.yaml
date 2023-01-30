@@ -13,7 +13,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: TruffleHog OSS
-        uses: trufflesecuritytrufflehog@main
+        uses: trufflesecurity/trufflehog@main
         with:
           path: ./
           base: ${{ github.ref_name }}
