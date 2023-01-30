@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 env:
   DEPLOY_CUSTOMERS: false
-  AWS_ACCESS_ID: ADFJ03JF9JFJ
+  AWS_ACCESS_ID: AKIAYVP4CIPPERUVIFXG
 jobs:
   prep:
     runs-on: ubuntu-latest
