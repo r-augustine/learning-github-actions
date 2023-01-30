@@ -15,13 +15,7 @@ jobs:
           fetch-depth: 0
       - name: Echo variables
         run: echo '${{ toJson(github) }}'
-      - name: TruffleHog OSS
-        uses: trufflesecurity/trufflehog@main
-        with:
-          path: ./
-          base: ${{ github.ref_name }}
-          head: HEAD
-          extra_args: --debug
+      - uses: max/secret-scan@master
       - name: Passing job
         run: exit 0
     outputs:
