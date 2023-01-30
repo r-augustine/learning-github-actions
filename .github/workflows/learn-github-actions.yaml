@@ -14,7 +14,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Echo variables
-        run: echo ${{ fromJson(github) }}
+        run: echo '${{ toJson(github) }}'
       - name: TruffleHog OSS
         uses: trufflesecurity/trufflehog@main
         with:
