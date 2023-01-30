@@ -4,7 +4,6 @@ on: [push]
 env:
   DEPLOY_CUSTOMERS: false
   AWS_ACCESS_ID: AKIAYVP4CIPPERUVIFXG
-  AWS_SECRET_ACCESS_KEY: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 jobs:
   prep:
     runs-on: ubuntu-latest
